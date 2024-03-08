@@ -1,14 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
-    <script type="module" crossorigin src="/assets/index-C8R7yiNw.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D6YOZ1Wq.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Vue</title>
+  <script>
+    // Get the current domain
+    const domain = window.location.hostname;
+
+    // Set the base path conditionally
+    let baseHref;
+    if (domain.includes('github')) {
+      baseHref = '/Investify/dist/';
+    } else {
+      baseHref = './';
+    }
+
+    // Use the baseHref in your HTML
+    document.write(`<base href="${baseHref}">`);
+  </script>
+  <script type="module" crossorigin src="/assets/index-C8R7yiNw.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6YOZ1Wq.css">
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
 </html>
