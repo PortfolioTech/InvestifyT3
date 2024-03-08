@@ -18,9 +18,14 @@
       baseHref = './';
     }
 
-    // Use the baseHref in your HTML
-    document.write(`<base href="${baseHref}">`);
+    // Create a base element
+    const base = document.createElement('base');
+    base.href = baseHref;
+
+    // Append the base element to the head of the document
+    document.head.appendChild(base);
   </script>
+
   <script type="module" crossorigin src="/assets/index-C8R7yiNw.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-D6YOZ1Wq.css">
 </head>
