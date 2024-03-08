@@ -4,8 +4,10 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
-// https://vitejs.dev/config/
+const domain = process.env.HOSTNAME || '';
+
 export default defineConfig({
+  base: domain.includes('github') ? '/Investify/dist/' : './',
   plugins: [
     vue(),
     basicSsl(),
@@ -14,5 +16,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
 })
